@@ -1,4 +1,4 @@
-本教程主要讲一些CUDA的优化
+这里主要探讨一些CUDA的编程模型
 
 我手上有两种GPU可以用来测试，分别是**GeForce GTX 1080 Ti**和**Tesla V100**，下面它们的主要参数
 
@@ -49,4 +49,4 @@ printf("counter1=%d, counter2=%d\n", hostCounters[0], hostCounters[1]);
 printf("time_elapsed=%.0fms\n", 1000.0f * (t2 - t1) / CLOCKS_PER_SEC);
 ```
 
-为了更准确的测量时间，我们使用了一个暖场内核在被测内核之前运行
+初始化CUDA上下文需要一定的开销，为了更准确的测量时间，通常会使用一个暖场内核在被测内核之前运行
